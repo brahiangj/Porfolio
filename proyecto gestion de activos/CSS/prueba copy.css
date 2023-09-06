@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+:root {
+    --primary-color: #ffff;
+    --secondary-color: #333;
+    --main-color: #004AAD;
+    --main-color2: #f2f1f7;
+}
+
+body {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    overflow-x: hidden;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 5%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    color: var(--main-color);
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+    animation: slideRight 1s ease forwards;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    color: #ffff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px; 
+}
+
+.navbar a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 5px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: .5s;
+}
+
+.navbar a:hover:after{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.inicio {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 60px 7% 0; 
+}
+
+.inicio .contenido-inicio {
+    max-width: 440px;
+}
+
+.contenido-inicio h3 {
+    font-size: 27px;
+    line-height: .3;
+}
+
+.contenido-inicio h1 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.medios-sociales a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    font-size: 20px;
+    color: var(--main-color);
+    text-decoration: none;
+    margin: 25px 15px 30px 0;
+    transition: .5s ease;
+}
+
+.medios-sociales a:hover{
+    background: var(--main-color);
+    color: #ffffff;
+}
+
+
+.btn{
+    display: inline-block;
+    padding: 12px 28px;
+    background: var(--main-color);
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    font-size: 16px;
+    color: #fffefe;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--main-color);
+}
+
+.inicio .contenedor-imagenes{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 768px;
+    height: 768px;
+    overflow: hidden;
+}
+
+.contenedor-imagenes .imagenes-box{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%; 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-color);
+}
+
+.imagenes-box .imagenes{
+    position: absolute;
+    left: 0;
+    transform-origin: 384px;
+    transform: rotate(calc(360deg / 4 * var(--i)));
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    color: var(--main-color);
+    background:var(--primary-color);
+    padding: 13px 0;
+}
+
+.imagenes-box .imagenes:nth-child(1) i {
+    margin-right: 15px;
+}
+
+.imagenes-box .imagenes:nth-child(2) {
+    padding-bottom: 20px;
+}
+.imagenes-box .imagenes:nth-child(4)  {
+    padding-bottom: 20px;
+}
+
+.imagenes h3{
+    font-size: 32px;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.imagenes-box .circulo {
+    width: 72%;
+    height: 72%;
+    border: 3px solid var(--main-color);
+    border-radius: 50%;
+}
+
+.contenedor-imagenes .superposicion {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 384px solid var(--main-color);
+    border-right: 384px solid var(--main-color);
+    border-bottom: 384px solid var(--main-color);
+    border-left: 384px solid transparent;
+}
+
+.imagen-inicio img{
+    position: absolute;
+    bottom: 0;
+    left: 750px;
+    width: 30%;
+    
+    pointer-events: none;   
+}
+
+@keyframes slideRight{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
